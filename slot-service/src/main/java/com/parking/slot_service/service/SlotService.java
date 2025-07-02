@@ -19,6 +19,7 @@ public interface SlotService {
 
     List<SlotResponseDTO> getAvailableSlotsByType(String type);
 
+    SlotResponseDTO updateSlotOccupancy(Long slotId, Boolean occupied);
 
 }
  

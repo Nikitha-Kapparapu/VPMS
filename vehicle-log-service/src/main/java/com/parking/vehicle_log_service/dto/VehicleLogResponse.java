@@ -14,7 +14,7 @@ public class VehicleLogResponse {
     private String vehicleNumber;
     private LocalDateTime entryTime;
     private LocalDateTime exitTime;
-    private Long durationMinutes;
+    private String duration; // for hh:mm:ss format
     private Long userId;
     private Long slotId;
 }

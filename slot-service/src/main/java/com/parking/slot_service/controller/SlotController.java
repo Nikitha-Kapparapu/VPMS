@@ -52,7 +52,7 @@ public class SlotController {
     }
  
     // ✅ 3. Update slot availability [STAFF only]
-    @PutMapping("/{slotId}")
+    @PutMapping("{slotId}")
     @PreAuthorize("hasAuthority('STAFF')")
     public ResponseEntity<Map<String, Object>> updateSlot(@PathVariable Long slotId,
                                                            @RequestBody SlotRequestDTO requestDTO) {
@@ -99,7 +99,17 @@ public ResponseEntity<Map<String, Object>> getAvailableSlotsByType(@PathVariable
         "slots", slots
     ));
 }
-
+@PutMapping("/slot/{slotId}")
+@PreAuthorize("hasAuthority('STAFF')")
+public ResponseEntity<Map<String, Object>> updateSlotOccupancy(
+        @PathVariable Long slotId,
+        @RequestBody Map<String, Object> request) {
+    Boolean occupied = (Boolean) request.get("occupied");
+    SlotResponseDTO updatedSlot = slotService.updateSlotOccupancy(slotId, occupied);
+    Map<String, Object> res = new HashMap<>();
+    res.put("slot", updatedSlot);
+    return ResponseEntity.ok(res);
+}
     
 }
  
