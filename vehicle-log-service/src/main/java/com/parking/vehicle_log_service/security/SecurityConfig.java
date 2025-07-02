@@ -38,7 +38,7 @@ public class SecurityConfig {
                     "/swagger-resources/**",
                     "/webjars/**"
                 ).permitAll()
-                .requestMatchers("/api/vehicle-log/**").permitAll()
+                // .requestMatchers("/api/vehicle-log/**").permitAll()
                 .anyRequest().authenticated())
             .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authenticationProvider(authProvider())

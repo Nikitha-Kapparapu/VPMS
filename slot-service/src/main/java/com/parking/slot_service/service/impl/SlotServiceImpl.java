@@ -75,5 +75,14 @@ public class SlotServiceImpl implements SlotService {
             .collect(Collectors.toList());
 }
 
+@Override
+public SlotResponseDTO updateSlotOccupancy(Long slotId, Boolean occupied) {
+    Slot slot = slotRepository.findById(slotId)
+        .orElseThrow(() -> new RuntimeException("Slot not found"));
+    slot.setOccupied(occupied);
+    slotRepository.save(slot);
+    return mapToDTO(slot);
+}
+
 }
  

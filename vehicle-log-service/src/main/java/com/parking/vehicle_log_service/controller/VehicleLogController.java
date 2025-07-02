@@ -22,8 +22,8 @@ public class VehicleLogController {
 
 
     // 🔹 Log vehicle entry (STAFF or ADMIN)
-    @PostMapping("/entry")
-    @PreAuthorize("hasAnyAuthority('STAFF', 'ADMIN')")
+ @PostMapping("/entry")
+    @PreAuthorize("hasAnyAuthority('STAFF', 'ADMIN')")   
     public ResponseEntity<Map<String, Object>> logEntry(@RequestBody VehicleEntryRequest request) {
         VehicleLogResponse response = logService.logVehicleEntry(request);
         Map<String, Object> res = new HashMap<>();
