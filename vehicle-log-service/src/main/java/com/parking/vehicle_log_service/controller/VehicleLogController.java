@@ -23,7 +23,7 @@ public class VehicleLogController {
 
     // 🔹 Log vehicle entry (STAFF or ADMIN)
  @PostMapping("/entry")
-    @PreAuthorize("hasAnyAuthority('STAFF', 'ADMIN')")   
+    @PreAuthorize("hasAnyAuthority('STAFF')")   
     public ResponseEntity<Map<String, Object>> logEntry(@RequestBody VehicleEntryRequest request) {
         VehicleLogResponse response = logService.logVehicleEntry(request);
         Map<String, Object> res = new HashMap<>();
@@ -34,7 +34,7 @@ public class VehicleLogController {
 
     // 🔹 Log vehicle exit (STAFF or ADMIN)
     @PostMapping("/exit")
-    @PreAuthorize("hasAnyAuthority('STAFF', 'ADMIN')")
+    @PreAuthorize("hasAnyAuthority('STAFF')")
     public ResponseEntity<Map<String, Object>> logExit(@RequestBody VehicleExitRequest request) {
         VehicleLogResponse response = logService.logVehicleExit(request);
         Map<String, Object> res = new HashMap<>();
@@ -60,4 +60,21 @@ public class VehicleLogController {
     public ResponseEntity<VehicleLogResponse> getLogById(@PathVariable Long id) {
         return ResponseEntity.ok(logService.getLogById(id));
     }
+
+    // ...existing code...
+
+    // 🔹 Update a vehicle log by ID (STAFF or ADMIN)
+    @PutMapping("/{id}")
+    @PreAuthorize("hasAnyAuthority('STAFF', 'ADMIN')")
+    public ResponseEntity<Map<String, Object>> updateLog(
+            @PathVariable Long id,
+            @RequestBody VehicleLogResponse updateRequest) {
+        VehicleLogResponse updated = logService.updateLogById(id, updateRequest);
+        Map<String, Object> res = new HashMap<>();
+        res.put("message", "Vehicle log updated");
+        res.put("log", updated);
+        return ResponseEntity.ok(res);
+            }
+// ...existing code...
+
 }
