@@ -21,5 +21,7 @@ public interface SlotService {
 
     SlotResponseDTO updateSlotOccupancy(Long slotId, Boolean occupied);
 
+    SlotResponseDTO getSlotById(Long slotId);
+
 }
  

@@ -25,11 +25,17 @@ public class VehicleLogController {
  @PostMapping("/entry")
     @PreAuthorize("hasAnyAuthority('STAFF')")   
     public ResponseEntity<Map<String, Object>> logEntry(@RequestBody VehicleEntryRequest request) {
-        VehicleLogResponse response = logService.logVehicleEntry(request);
-        Map<String, Object> res = new HashMap<>();
-        res.put("message", "Vehicle entry recorded");
-        res.put("log", response);
-        return ResponseEntity.ok(res);
+        try {
+            VehicleLogResponse response = logService.logVehicleEntry(request);
+            Map<String, Object> res = new HashMap<>();
+            res.put("message", "Vehicle entry recorded");
+            res.put("log", response);
+            return ResponseEntity.ok(res);
+        } catch (RuntimeException ex) {
+            Map<String, Object> res = new HashMap<>();
+            res.put("error", ex.getMessage());
+            return ResponseEntity.badRequest().body(res);
+        }
     }
 
     // 🔹 Log vehicle exit (STAFF or ADMIN)

@@ -17,4 +17,7 @@ public class VehicleLogResponse {
     private String duration; // for hh:mm:ss format
     private Long userId;
     private Long slotId;
+    // ...existing code...
+    private String slotType;
+    
 }
