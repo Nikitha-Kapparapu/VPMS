@@ -124,5 +124,33 @@ public VehicleLogResponse logVehicleExit(VehicleExitRequest request) {
                 log.getSlotId()
         );
     }
+
+    // ...existing code...
+
+    @Override
+    public VehicleLogResponse updateLogById(Long id, VehicleLogResponse updateRequest) {
+        VehicleLog log = logRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Log not found"));
+
+        // Example: update vehicle number and slotId if provided
+        if (updateRequest.getVehicleNumber() != null) {
+            log.setVehicleNumber(updateRequest.getVehicleNumber());
+        }
+        if (updateRequest.getSlotId() != null && !updateRequest.getSlotId().equals(log.getSlotId())) {
+            // Free old slot
+            slotServiceClient.updatedSlot(log.getSlotId(), Map.of(occupancyField, false));
+            // Occupy new slot
+            slotServiceClient.updatedSlot(updateRequest.getSlotId(), Map.of(occupancyField, true));
+            log.setSlotId(updateRequest.getSlotId());
+        }
+        // Add more fields as needed
+
+        logRepo.save(log);
+        return mapToResponse(log);
+    }
+
+
+
+// ...existing code...
 }
  
