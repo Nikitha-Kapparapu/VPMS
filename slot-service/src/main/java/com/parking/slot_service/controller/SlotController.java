@@ -88,13 +88,12 @@ public class SlotController {
             "slots", allSlots
         ));
     }
-    // ...existing code...
+
 
 // ✅ 6. Get available slots by type (open to all)
 @GetMapping("/available/type/{type}")
 public ResponseEntity<Map<String, Object>> getAvailableSlotsByType(@PathVariable String type) {
     List<SlotResponseDTO> slots = slotService.getAvailableSlotsByType(type);
-
     return ResponseEntity.ok(Map.of(
         "message", "Available slots of type " + type + " fetched",
         "slots", slots
