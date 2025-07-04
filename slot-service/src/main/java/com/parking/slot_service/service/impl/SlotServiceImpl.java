@@ -87,5 +87,12 @@ public SlotResponseDTO updateSlotOccupancy(Long slotId, Boolean occupied) {
     return mapToDTO(slot);
 }
 
+@Override
+public SlotResponseDTO getSlotById(Long slotId) {
+    Slot slot = slotRepository.findById(slotId)
+        .orElseThrow(() -> new RuntimeException("Slot not found"));
+    return mapToDTO(slot);
+}
+
 }
  

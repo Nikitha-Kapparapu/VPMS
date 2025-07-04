@@ -1,4 +1,4 @@
-package com.parking.vehicle_log_service.dto;
+package com.parking.billing_service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,5 +19,5 @@ public class VehicleLogResponse {
     private Long slotId;
     // ...existing code...
     private String slotType;
-    
+   
 }

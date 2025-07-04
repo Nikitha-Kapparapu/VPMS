@@ -101,7 +101,7 @@ public ResponseEntity<Map<String, Object>> getAvailableSlotsByType(@PathVariable
     ));
 }
 @PutMapping("/slot/{slotId}")
-@PreAuthorize("hasAuthority('STAFF', 'ADMIN')")
+@PreAuthorize("hasAnyAuthority('STAFF','ADMIN')")
 public ResponseEntity<Map<String, Object>> updateSlotOccupancy(
         @PathVariable Long slotId,
         @RequestBody Map<String, Object> request) {
@@ -134,6 +134,16 @@ public ResponseEntity<Void> updateSlotOccupancy(
     slotService.updateSlotOccupancy(slotId, isOccupied);
     return ResponseEntity.ok().build();
 }
+
+
+@GetMapping("/{slotId}")
+public ResponseEntity<Map<String, Object>> getSlotById(@PathVariable Long slotId) {
+    SlotResponseDTO slot = slotService.getSlotById(slotId);
+    Map<String, Object> res = new HashMap<>();
+    res.put("slot", slot);
+    return ResponseEntity.ok(res);
+}
+
 
  
 }

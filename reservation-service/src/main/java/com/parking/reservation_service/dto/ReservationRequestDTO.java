@@ -13,4 +13,5 @@ public class ReservationRequestDTO {
     private String vehicleNumber;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
+    private String type; // e.g., "PENDING", "CONFIRMED", "CANCELLED"
 }
