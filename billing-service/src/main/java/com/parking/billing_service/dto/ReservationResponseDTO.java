@@ -1,6 +1,6 @@
-package com.parking.reservation_service.dto;
+package com.parking.billing_service.dto;
  
-import com.parking.reservation_service.entity.ReservationStatus;
+import com.parking.billing_service.entity.ReservationStatus;
 import lombok.*;
  
 import java.time.LocalDateTime;

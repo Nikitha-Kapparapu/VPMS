@@ -166,7 +166,7 @@ public VehicleLogResponse updateLogById(Long id, VehicleLogResponse updateReques
         slotServiceClient.updatedSlot(updateRequest.getSlotId(), Map.of(occupancyField, true));
         log.setSlotId(updateRequest.getSlotId());
     }
-    // Add more fields as needed
+   
 
     logRepo.save(log);
     Map<String, Object> slotDetails = slotServiceClient.getSlotById(log.getSlotId());
@@ -174,5 +174,21 @@ public VehicleLogResponse updateLogById(Long id, VehicleLogResponse updateReques
     String slotType = slot != null ? (String) slot.getOrDefault("type", "UNKNOWN") : "UNKNOWN";
     return mapToResponse(log, slotType);
 }
-    // ...existing code...
+
+
+
+@Override
+public List<VehicleLogResponse> getLogsByUserId(Long userId) {
+    return logRepo.findByUserId(userId)
+            .stream()
+            .map(log -> {
+                Map<String, Object> slotDetails = slotServiceClient.getSlotById(log.getSlotId());
+                Map<String, Object> slot = (Map<String, Object>) slotDetails.get("slot");
+                String slotType = slot != null ? (String) slot.getOrDefault("type", "UNKNOWN") : "UNKNOWN";
+                return mapToResponse(log, slotType);
+            })
+            .collect(Collectors.toList());
+}
+
+
 }

@@ -35,6 +35,10 @@ public class Reservation {
  
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private ReservationStatus status; // ACTIVE, CANCELLED, COMPLETED
+    private ReservationStatus status; 
+    
+    @Column(nullable = false)                    
+    private String type;
+
 }
  

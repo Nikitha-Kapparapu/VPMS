@@ -17,6 +17,8 @@ public interface VehicleLogService {
     VehicleLogResponse getLogById(Long id);
 
     VehicleLogResponse updateLogById(Long id, VehicleLogResponse updateRequest);
+  
+    List<VehicleLogResponse> getLogsByUserId(Long userId);
 
 
 

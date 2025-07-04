@@ -23,7 +23,7 @@ public class VehicleLogController {
 
     // 🔹 Log vehicle entry (STAFF or ADMIN)
  @PostMapping("/entry")
-    @PreAuthorize("hasAnyAuthority('STAFF')")   
+    @PreAuthorize("hasAnyAuthority('STAFF', 'ADMIN')")   
     public ResponseEntity<Map<String, Object>> logEntry(@RequestBody VehicleEntryRequest request) {
         try {
             VehicleLogResponse response = logService.logVehicleEntry(request);
@@ -81,6 +81,13 @@ public class VehicleLogController {
         res.put("log", updated);
         return ResponseEntity.ok(res);
             }
+
+            @GetMapping("/user/{userId}")
+@PreAuthorize("hasAnyAuthority('ADMIN','STAFF','CUSTOMER')")
+public ResponseEntity<List<VehicleLogResponse>> getLogsByUserId(@PathVariable Long userId) {
+    List<VehicleLogResponse> logs = logService.getLogsByUserId(userId);
+    return ResponseEntity.ok(logs);
+}
 // ...existing code...
 
 }

@@ -51,6 +51,7 @@ public void completeExpiredReservations() {
                 .startTime(dto.getStartTime())
                 .endTime(dto.getEndTime())
                 .status(ReservationStatus.ACTIVE)
+                .type(dto.getType())
                 .build();
  
         reservationRepo.save(reservation);
@@ -65,6 +66,7 @@ public void completeExpiredReservations() {
         reservation.setStartTime(dto.getStartTime());
         reservation.setEndTime(dto.getEndTime());
         reservation.setVehicleNumber(dto.getVehicleNumber());
+        reservation.setType(dto.getType());
     
         reservationRepo.save(reservation);
         return mapToDTO(reservation);
@@ -110,7 +112,9 @@ public void completeExpiredReservations() {
                 reservation.getVehicleNumber(),
                 reservation.getStartTime(),
                 reservation.getEndTime(),
-                reservation.getStatus()
+                reservation.getStatus(),
+                reservation.getType()
+
         );
     }
 }
