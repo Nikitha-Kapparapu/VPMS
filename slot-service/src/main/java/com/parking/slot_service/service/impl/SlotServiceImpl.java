@@ -19,6 +19,9 @@ public class SlotServiceImpl implements SlotService {
 
     @Override
     public SlotResponseDTO addSlot(SlotRequestDTO requestDTO) {
+        if (!"2W".equals(requestDTO.getType()) && !"4W".equals(requestDTO.getType())) {
+            throw new IllegalArgumentException("Invalid slot type. Only '2W' or '4W' allowed.");
+        }
         Slot slot = new Slot();
         slot.setLocation(requestDTO.getLocation());
         slot.setType(requestDTO.getType());

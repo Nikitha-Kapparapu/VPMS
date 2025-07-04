@@ -111,7 +111,6 @@ public ResponseEntity<Map<String, Object>> updateSlotOccupancy(
     return ResponseEntity.ok(res);
 }
     // ✅ Feign-accessible endpoint to update slot occupancy status
-// Feign-accessible endpoint to mark slot as occupied
 @PutMapping("/mark-occupied/{slotId}")
 @PreAuthorize("hasAuthority('CUSTOMER')")
 public ResponseEntity<Void> markSlotOccupied(@PathVariable Long slotId) {

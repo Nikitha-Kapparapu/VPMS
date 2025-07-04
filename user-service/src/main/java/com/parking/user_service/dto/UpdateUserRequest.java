@@ -1,4 +1,5 @@
 package com.parking.user_service.dto;
+import com.parking.user_service.entity.Role;
  
 import lombok.*;
  
@@ -8,6 +9,7 @@ import lombok.*;
 public class UpdateUserRequest {
     private String name;
     private String email;
-    private String password; // optional — update if present
+    private String password;
+    private Role role; // optional — update if present
 }
  

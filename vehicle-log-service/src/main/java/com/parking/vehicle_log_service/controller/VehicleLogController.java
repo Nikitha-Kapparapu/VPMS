@@ -48,7 +48,7 @@ public class VehicleLogController {
 
     // 🔹 Log vehicle exit (STAFF or ADMIN)
     @PostMapping("/exit")
-    @PreAuthorize("hasAnyAuthority('STAFF','ADMIN')")
+    @PreAuthorize("hasAnyAuthority('STAFF')")
     public ResponseEntity<Map<String, Object>> logExit(@RequestBody VehicleExitRequest request) {
         VehicleLogResponse response = logService.logVehicleExit(request);
         Map<String, Object> res = new HashMap<>();

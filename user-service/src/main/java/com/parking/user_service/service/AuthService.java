@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 
 
+
  
 @Service
 public class AuthService {
@@ -88,6 +89,8 @@ public UserProfileResponse updateUser(Long id, UpdateUserRequest request) {
     if (request.getPassword() != null && !request.getPassword().isBlank()) {
         user.setPassword(passwordEncoder.encode(request.getPassword()));
     }
+    if (request.getRole() != null) user.setRole(request.getRole());
+
  
     userRepo.save(user);
     return new UserProfileResponse(user.getId(), user.getName(), user.getEmail(), user.getRole());
