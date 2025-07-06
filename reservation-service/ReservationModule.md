@@ -158,5 +158,7 @@ Manages database interaction using Spring Data JPA.
 
 ## API Documentation
 
-For detailed API documentation, please refer to the [Reservation EndPoints Documentation](../API_documentation/Reservation Endpoints.md).
+For detailed API documentation, please refer to the 
+
+[Reservation EndPoints Documentation](/reservation-service/Reservation%20Endpoints.md)
 

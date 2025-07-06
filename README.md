@@ -118,23 +118,23 @@ flowchart TD
 - **Swagger/OpenAPI**: For API documentation and testing.  
 
 ## Module Documentation
-[User Management Module](Documentation/UserModule.md)
+[User Management Module](user-service\UserModule.md)
 
 Manages user registration, login, and role-based access control for admins, staff, and customers. Ensures secure authentication and authorization processes.
 
-[Parking Slot Management Module](Documentation/ParkingSlotModule.md)
+[Parking Slot Management Module](slot-service/ParkingSlotModule.md)
 
 Handles parking slot operations such as adding, updating, and checking availability. Maintains real-time status of parking slots.
 
-[Vehicle Entry&Exit Logging Module](Documentation/VehicleLogModule.md)
+[Vehicle Entry&Exit Logging Module](vehicle-log-service\VehicleLogModule.md)
 
 Logs vehicle movements and updates parking slot statuses dynamically. Provides a seamless tracking mechanism for entry and exit.
 
-[Reservation Management Module](Documentation/ReservationModule.md)
+[Reservation Management Module](reservation-service\ReservationModule.md)
 
 Enables users to book, modify, or cancel parking slots. Ensures smooth reservation management with real-time updates.
 
-[Billing and Payments Module](Documentation/BillingModule.md)
+[Billing and Payments Module](billing-service\BillingModule.md)
 
 Generates bills based on parking duration and processes payments securely. Supports multiple payment methods for user convenience.
 

@@ -125,4 +125,6 @@ flowchart LR
 | GET         | `/api/user/email/{email}`          | Get user details by email                         | -                                |
 
 ## API Documentation of User Module
-For detailed API documentation, please refer to the [User EndPoints Documentation](../API_documentation/UserEndpoints.md).
+For detailed API documentation, please refer to the 
+
+[User EndPoints Documentation](../user-service/User%20Endpoints.md)
