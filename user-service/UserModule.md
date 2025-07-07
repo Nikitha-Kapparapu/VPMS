@@ -127,4 +127,4 @@ flowchart LR
 ## API Documentation of User Module
 For detailed API documentation, please refer to the 
 
-[User EndPoints Documentation](../user-service/User%20Endpoints.md)
+[User EndPoints Documentation](user-service/User Endpoints.md)

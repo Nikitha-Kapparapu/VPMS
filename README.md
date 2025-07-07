@@ -9,11 +9,11 @@
     - [Other Tools and Libraries](#other-tools-and-libraries)
 - [Backend Dependencies](#backend-dependencies)
 - [Module Documentation](#module-documentation)
-    - [User Management Module](Documentation/UserModule.md)
-    - [Parking Slot Management Module](#Documentation/ParkingSlotModule.md)
-    - [Vehicle Entry&Exit Logging Module](#Documentation/VehicleLogModule.md)
-    - [Reservation System Module](#Documentation/ReservationModule.md)
-    - [Billing and Payments Module](#Documentation/BillingModule.md)
+    - [User Management Module](user-service/UserModule.md)
+    - [Parking Slot Management Module](slot-service/ParkingSlotModule.md)
+    - [Vehicle Entry&Exit Logging Module](vehicle-log-service\VehicleLogModule.md)
+    - [Reservation System Module](reservation-service/ReservationModule.md)
+    - [Billing and Payments Module](billing-service/BillingModule.md)
 - [How to Run This Project with Eureka and API Gateway](#how-to-run-this-project-with-eureka-and-api-gateway)
 - [Project Contributors](#project-contributors)
 
@@ -118,7 +118,7 @@ flowchart TD
 - **Swagger/OpenAPI**: For API documentation and testing.  
 
 ## Module Documentation
-[User Management Module](user-service\UserModule.md)
+[User Management Module](user-service/UserModule.md)
 
 Manages user registration, login, and role-based access control for admins, staff, and customers. Ensures secure authentication and authorization processes.
 
@@ -130,11 +130,11 @@ Handles parking slot operations such as adding, updating, and checking availabil
 
 Logs vehicle movements and updates parking slot statuses dynamically. Provides a seamless tracking mechanism for entry and exit.
 
-[Reservation Management Module](https://github.com/Nikitha-Kapparapu/VPMS/blob/main/reservation-service/ReservationModule.md)
+[Reservation Management Module](reservation-service/ReservationModule.md)
 
 Enables users to book, modify, or cancel parking slots. Ensures smooth reservation management with real-time updates.
 
-[Billing and Payments Module](https://github.com/Nikitha-Kapparapu/VPMS/blob/main/billing-service/BillingModule.md)
+[Billing and Payments Module](billing-service/BillingModule.md)
 
 Generates bills based on parking duration and processes payments securely. Supports multiple payment methods for user convenience.
 
