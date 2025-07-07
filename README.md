@@ -11,7 +11,7 @@
 - [Module Documentation](#module-documentation)
     - [User Management Module](user-service/UserModule.md)
     - [Parking Slot Management Module](slot-service/ParkingSlotModule.md)
-    - [Vehicle Entry&Exit Logging Module](vehicle-log-service\VehicleLogModule.md)
+    - [Vehicle Entry&Exit Logging Module](vehicle-log-service/VehicleLogModule.md)
     - [Reservation System Module](reservation-service/ReservationModule.md)
     - [Billing and Payments Module](billing-service/BillingModule.md)
 - [How to Run This Project with Eureka and API Gateway](#how-to-run-this-project-with-eureka-and-api-gateway)
