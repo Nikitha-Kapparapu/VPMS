@@ -130,7 +130,7 @@ Handles parking slot operations such as adding, updating, and checking availabil
 
 Logs vehicle movements and updates parking slot statuses dynamically. Provides a seamless tracking mechanism for entry and exit.
 
-[Reservation Management Module](reservation-service\ReservationModule.md)
+[Reservation Management Module](https://github.com/Nikitha-Kapparapu/VPMS/blob/main/reservation-service/ReservationModule.md)
 
 Enables users to book, modify, or cancel parking slots. Ensures smooth reservation management with real-time updates.
 

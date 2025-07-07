@@ -18,15 +18,17 @@
         </processorPath>
         <module name="user-service" />
       </profile>
-      <profile name="Annotation profile for vehicle-log-service" enabled="true">
+      <profile name="Annotation profile for billing-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
-        <module name="slot-service" />
         <module name="vehicle-log-service" />
+        <module name="slot-service" />
+        <module name="billing-service" />
+        <module name="reservation-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,8 +37,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="billing-service" options="-parameters" />
       <module name="common-lib" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
+      <module name="reservation-service" options="-parameters" />
       <module name="slot-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
       <module name="vehicle-log-service" options="-parameters" />

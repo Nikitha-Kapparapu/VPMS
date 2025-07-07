@@ -160,5 +160,5 @@ Manages database interaction using Spring Data JPA.
 
 For detailed API documentation, please refer to the 
 
-[Reservation EndPoints Documentation](/reservation-service/Reservation%20Endpoints.md)
+[Reservation EndPoints Documentation](https://github.com/Nikitha-Kapparapu/VPMS/blob/main/reservation-service/Reservation%20Endpoints.md)
 

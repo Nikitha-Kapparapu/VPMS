@@ -20,6 +20,4 @@ public interface VehicleLogService {
   
     List<VehicleLogResponse> getLogsByUserId(Long userId);
 
-
-
 }
