@@ -134,7 +134,7 @@ Logs vehicle movements and updates parking slot statuses dynamically. Provides a
 
 Enables users to book, modify, or cancel parking slots. Ensures smooth reservation management with real-time updates.
 
-[Billing and Payments Module](billing-service\BillingModule.md)
+[Billing and Payments Module](https://github.com/Nikitha-Kapparapu/VPMS/blob/main/billing-service/BillingModule.md)
 
 Generates bills based on parking duration and processes payments securely. Supports multiple payment methods for user convenience.
 
