@@ -126,7 +126,7 @@ Manages user registration, login, and role-based access control for admins, staf
 
 Handles parking slot operations such as adding, updating, and checking availability. Maintains real-time status of parking slots.
 
-[Vehicle Entry&Exit Logging Module](vehicle-log-service\VehicleLogModule.md)
+[Vehicle Entry&Exit Logging Module](vehicle-log-service/VehicleLogModule.md)
 
 Logs vehicle movements and updates parking slot statuses dynamically. Provides a seamless tracking mechanism for entry and exit.
 

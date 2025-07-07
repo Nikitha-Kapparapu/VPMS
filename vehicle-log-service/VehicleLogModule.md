@@ -200,7 +200,7 @@ Below is a list of RESTful API endpoints exposed by the Vehicle Log Entry & Exit
 
 For detailed API documentation, please refer to the
  
-[VehicleLog EndPoints Documentation](/vehicle-log-service/VehicleLog%20Endpoints.md)
+[VehicleLog EndPoints Documentation](https://github.com/VaishnaviReddy8864/VPMS/blob/main/vehicle-log-service/VehicleLog%20Endpoints.md)
 
 
 
