@@ -131,4 +131,6 @@ The module is implemented using a multi-layered architecture to ensure separatio
 | GET         | `/api/slots/{slotId}`                   | Get slot details by slot ID                                | Path parameter: slotId             |
 
 ## API Documentation
-For detailed documentation on the API endpoints, please refer to the dedicated API documentation guide (e.g., [Slot API Documentation](../API_documentation/Slot Endpoints.md)).
+For detailed documentation on the API endpoints, please refer to the dedicated API documentation guide 
+
+[Slot API Documentation](/slot-service/Slot%20Endpoints.md)

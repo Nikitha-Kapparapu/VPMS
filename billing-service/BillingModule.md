@@ -157,6 +157,8 @@ Provides direct access to the database using Spring Data JPA.
 
 ## API Documentation
 
-For detailed API documentation, please refer to the [Billing EndPoints Documentation](../API_documentation/Billing Endpoints.md).
+For detailed API documentation, please refer to the 
+
+[Billing EndPoints Documentation](./Billing%20Endpoints.md).
 
 
