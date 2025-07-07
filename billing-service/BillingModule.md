@@ -159,6 +159,6 @@ Provides direct access to the database using Spring Data JPA.
 
 For detailed API documentation, please refer to the 
 
-[Billing EndPoints Documentation](./Billing%20Endpoints.md).
+[Billing EndPoints Documentation](https://github.com/Nikitha-Kapparapu/VPMS/blob/main/billing-service/Billing%20Endpoints.md).
 
 
