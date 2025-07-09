@@ -1,24 +1,22 @@
 package com.parking.vehicle_log_service.service.impl;
-import com.parking.vehicle_log_service.feign.SlotServiceClient;
-
-import org.springframework.beans.factory.annotation.Value;
-
-import com.parking.vehicle_log_service.dto.VehicleEntryRequest;
-import com.parking.vehicle_log_service.dto.VehicleExitRequest;
-import com.parking.vehicle_log_service.dto.VehicleLogResponse;
-import com.parking.vehicle_log_service.entity.VehicleLog;
-import com.parking.vehicle_log_service.repository.VehicleLogRepository;
-import com.parking.vehicle_log_service.service.VehicleLogService;
-
-import lombok.RequiredArgsConstructor;
-
-import org.springframework.stereotype.Service;
-
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.parking.vehicle_log_service.dto.VehicleEntryRequest;
+import com.parking.vehicle_log_service.dto.VehicleExitRequest;
+import com.parking.vehicle_log_service.dto.VehicleLogResponse;
+import com.parking.vehicle_log_service.entity.VehicleLog;
+import com.parking.vehicle_log_service.feign.SlotServiceClient;
+import com.parking.vehicle_log_service.repository.VehicleLogRepository;
+import com.parking.vehicle_log_service.service.VehicleLogService;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -66,13 +64,10 @@ public VehicleLogResponse logVehicleExit(VehicleExitRequest request) {
 
     log.setExitTime(LocalDateTime.now());
     Duration duration = Duration.between(log.getEntryTime(), log.getExitTime());
-    long seconds = duration.getSeconds();
-    String formattedDuration = String.format("%02d:%02d:%02d",
-            seconds / 3600,
-            (seconds % 3600) / 60,
-            seconds % 60);
-
+    long durationMinutes = duration.toMinutes(); // Calculate duration in minutes
+    log.setDurationMinutes(durationMinutes); // Save duration in minutes to the database
     logRepo.save(log);
+
     // Update slot occupancy to false (slot is now available)
     slotServiceClient.updatedSlot(
         log.getSlotId(),
@@ -89,7 +84,10 @@ public VehicleLogResponse logVehicleExit(VehicleExitRequest request) {
         log.getVehicleNumber(),
         log.getEntryTime(),
         log.getExitTime(),
-        formattedDuration,
+        String.format("%02d:%02d:%02d",
+            durationMinutes / 60,
+            durationMinutes % 60,
+            0), // Format duration for response
         log.getUserId(),
         log.getSlotId(),
         slotType

@@ -1,16 +1,24 @@
 package com.parking.reservation_service.controller;
  
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.parking.reservation_service.dto.ReservationRequestDTO;
 import com.parking.reservation_service.dto.ReservationResponseDTO;
 import com.parking.reservation_service.service.ReservationService;
+
 import lombok.RequiredArgsConstructor;
- 
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.*;
- 
-import java.util.List;
-import java.util.Map;
  
 @RestController
 @RequestMapping("/api/reservations")
@@ -33,7 +41,7 @@ public class ReservationController {
  
     // ✅ 2. Get All Reservations (ADMIN only)
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'STAFF')")
     public ResponseEntity<List<ReservationResponseDTO>> getAllReservations() {
         return ResponseEntity.ok(reservationService.getAllReservations());
     }
