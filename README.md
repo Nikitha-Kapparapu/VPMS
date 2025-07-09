@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Project Introduction](#project-introduction)
+- [Modules](#modules)
 - [Architecture Diagram](#architecture-diagram)
 - [Technologies Used](#technologies-used)
     - [Backend](#backend)
@@ -24,6 +25,14 @@
 * The system consists of well-defined components dedicated to user management, parking slot tracking, vehicle entry/exit logging, reservation handling, and automated billing.
 * Each module is developed to work in harmony, offering a scalable, secure, and maintainable solution for efficient vehicle parking services across various facility types such as malls, offices, and residential complexes.
 
+
+## Modules
+
+-  User-Service Module - Atharva Pimple
+-  Slot-Service Module - Bharadwaj M
+-  Vehicle-log-Service Module - Vaishnavi P
+-  Reservation-Service Module - Kapparapu Nikitha
+-  Billing-Service Module - Team
 ## Architecture Diagram 
 
 ```mermaid
