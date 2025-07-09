@@ -58,8 +58,8 @@ public class VehicleLogController {
     }
 
     // 🔹 Get all logs (ADMIN only)
-    @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping 
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'STAFF', 'CUSTOMER')")
     public ResponseEntity<Map<String, Object>> getAllLogs() {
         List<VehicleLogResponse> logs = logService.getAllLogs();
         Map<String, Object> res = new HashMap<>();

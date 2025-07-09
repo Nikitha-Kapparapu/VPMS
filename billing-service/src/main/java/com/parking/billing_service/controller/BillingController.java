@@ -55,8 +55,8 @@ public class BillingController {
     }
 
     @PostMapping("/{id}/pay")
-@PreAuthorize("hasAnyAuthority('ADMIN','STAFF','CUSTOMER')")
-public ResponseEntity<ApiResponse<InvoiceResponseDTO>> payInvoice(
+    @PreAuthorize("hasAnyAuthority('ADMIN','STAFF','CUSTOMER')")
+    public ResponseEntity<ApiResponse<InvoiceResponseDTO>> payInvoice(
         @PathVariable Long id,
         @RequestBody PaymentRequestDTO paymentRequest) {
     InvoiceResponseDTO response = billingService.payInvoice(id, paymentRequest);

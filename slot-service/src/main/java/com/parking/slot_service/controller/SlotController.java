@@ -65,9 +65,9 @@ public class SlotController {
         return ResponseEntity.ok(response);
     }
  
-    // ✅ 4. Get all available slots [CUSTOMER only]
+    // 4. Get all available slots [CUSTOMER only]
     @GetMapping("/available")
-    @PreAuthorize("hasAuthority('CUSTOMER')")
+    @PreAuthorize("hasAnyAuthority('STAFF','CUSTOMER', 'ADMIN')")
     public ResponseEntity<Map<String, Object>> getAvailableSlots() {
         List<SlotResponseDTO> slots = slotService.getAvailableSlots();
  
