@@ -35,54 +35,9 @@ The **User Management Module** is responsible for managing user-related operatio
 
 ## Component Diagram
 
-```mermaid
-flowchart LR
+![Component Diagram](assets/images/UserComponent.png)
 
-  %% Groups
-  subgraph Frontend [React Frontend]
-    direction TB
-    A1[User UI Components]
-    A2[User API Client]
-  end
-
-  subgraph Backend [Spring Boot]
-    direction TB
-    B1[UserController]
-    B2[UserService]
-    B3[UserRepository]
-  end
-
-  subgraph Database [Relational Database]
-    direction TB
-    C1[(Users Table)]
-  end
-
-  %% Entity and DTO
-  D1[User DTO]
-  D2[User Entity]
-
-  %% Connections
-  A2 -->|HTTP/REST| B1
-  B1 -->|Calls| B2
-  B2 -->|Calls| B3
-  B3 -->|ORM / JDBC| C1
-
-  B1 ---|uses| D1
-  B3 ---|maps to| D2
-
-  %% Styling
-  classDef frontend fill:#dae8fc,stroke:#6c8ebf,color:#1a237e
-  classDef backend fill:#d5e8d4,stroke:#82b366,color:#1b4332
-  classDef storage fill:#e8def8,stroke:#8e44ad,color:#4a148c
-  classDef model fill:#fff2cc,stroke:#d6b656,color:#7f4f24
-
-  class A1,A2 frontend
-  class B1,B2,B3 backend
-  class C1 storage
-  class D1,D2 model
-
-```
-
+ 
 ## Layered Architecture of User Management Module
 
 ### 1. Controller Layer
