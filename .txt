@@ -323,7 +323,7 @@ response
 }
 post http://localhost:8083/api/vehicle-log/exit
 Header 
-Authorization : Bearer <Admin token, Staff token>
+Authorization : Bearer <Staff token>
 Body
 {
   "logId":3
