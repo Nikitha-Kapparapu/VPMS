@@ -207,7 +207,18 @@ class ApiService {
   async getAvailableSlots() {
     try {
       const response = await this.client.get('/api/slots/available');
-      return response;
+      console.log('Get available slots response:', response); // Debug API response
+  
+      // Transform response if necessary
+      if (response.slots) {
+        return response.slots.map(slot => ({
+          id: slot.slotId.toString(),
+          type: slot.type,
+          location: slot.location,
+          isOccupied: slot.occupied,
+        }));
+      }
+      return [];
     } catch (error) {
       console.error('Get available slots error:', error);
       throw error;
@@ -217,7 +228,18 @@ class ApiService {
   async getAvailableSlotsByType(type) {
     try {
       const response = await this.client.get(`/api/slots/available/type/${type.toLowerCase()}`);
-      return response;
+      console.log('Get available slots by type response:', response); // Debug API response
+  
+      // Transform response if necessary
+      if (response.slots) {
+        return response.slots.map(slot => ({
+          id: slot.slotId.toString(),
+          type: slot.type,
+          location: slot.location,
+          isOccupied: slot.occupied,
+        }));
+      }
+      return [];
     } catch (error) {
       console.error('Get available slots by type error:', error);
       throw error;
