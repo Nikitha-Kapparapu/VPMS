@@ -46,9 +46,9 @@ public class ReservationController {
         return ResponseEntity.ok(reservationService.getAllReservations());
     }
  
-    // ✅ 3. Get Reservation by ID (ADMIN or the same USER)
+    //  3. Get Reservation by ID (ADMIN or the same USER)
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'CUSTOMER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'CUSTOMER', 'STAFF')")
     public ResponseEntity<ReservationResponseDTO> getReservationById(@PathVariable Long id) {
         return ResponseEntity.ok(reservationService.getReservationById(id));
     }
@@ -79,7 +79,7 @@ public ResponseEntity<Map<String, Object>> updateReservation(
  
     // ✅ 6. Get Reservations by User ID (ADMIN and CUSTOMER)
     @GetMapping("/user/{userId}")
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'CUSTOMER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN','CUSTOMER')")
     public ResponseEntity<List<ReservationResponseDTO>> getReservationsByUserId(@PathVariable Long userId) {
         return ResponseEntity.ok(reservationService.getReservationsByUser(userId));
     }

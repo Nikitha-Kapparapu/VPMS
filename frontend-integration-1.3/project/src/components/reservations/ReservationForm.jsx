@@ -17,7 +17,10 @@ const ReservationForm = ({ onClose, onSuccess }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const availableSlots = getAvailableSlots(formData.vehicleType);
+  // Ensure availableSlots is an array
+  const availableSlots = Array.isArray(getAvailableSlots(formData.vehicleType))
+    ? getAvailableSlots(formData.vehicleType)
+    : [];
   const ratePerHour = formData.vehicleType === '2W' ? 10 : 30;
   const totalAmount = ratePerHour * formData.duration;
 

@@ -7,7 +7,7 @@ import Header from './components/layout/Header';
 import Sidebar from './components/layout/Sidebar';
 import Dashboard from './components/dashboard/Dashboard';
 import ParkingMap from './components/parking/ParkingMap';
-import VehicleLogs from './components/logs/VehicleLogs';
+import VehicleLogs from './components/vehicles/VehicleLogs';
 import ReservationList from './components/reservations/ReservationList';
 import VehicleEntry from './components/vehicles/VehicleEntry';
 import VehicleExit from './components/vehicles/VehicleExit';
