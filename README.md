@@ -35,7 +35,7 @@
 -  Billing-Service Module - Team
 ## Architecture Diagram 
 
-![Architecture Diagram](Architecture_diagram.png")
+![Architecture Diagram]("assets/images/Architecture_diagram.png")
 
 ## Technologies Used
 
