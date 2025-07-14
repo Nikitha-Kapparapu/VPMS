@@ -70,7 +70,7 @@
 - **Swagger/OpenAPI**: For API documentation and testing.  
 
 ## Module Documentation
-[User Management Module](user-service\UserModule.md)
+[User Management Module](user-service/UserModule.md)
 
 Manages user registration, login, and role-based access control for admins, staff, and customers. Ensures secure authentication and authorization processes.
 
