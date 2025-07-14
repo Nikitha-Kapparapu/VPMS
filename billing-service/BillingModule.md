@@ -40,53 +40,9 @@ The **Billing & Payments Module** is an essential part of the Vehicle Parking Ma
 | **timestamp** | DATETIME      | Not Null                           | Date and time the invoice was created           |
 
 ## Component Diagram
-```mermaid
-flowchart LR
 
-  %% Groups
-  subgraph Frontend [React Frontend]
-    direction TB
-    F1[Billing UI Components]
-    F2[Billing API Client]
-  end
+![Billing_component](../assets/images/Billing_component.png)
 
-  subgraph Backend [Spring Boot Backend]
-    direction TB
-    B1[InvoiceController]
-    B2[InvoiceService]
-    B3[InvoiceRepository]
-  end
-
-  subgraph Database [Relational Database]
-    direction TB
-    D1[(Invoice Table)]
-  end
-
-  %% DTO and Entity
-  E1[BillingRequest DTO]
-  E2[Invoice Entity]
-
-  %% Connections
-  F2 -->|HTTP/REST| B1
-  B1 -->|Calls| B2
-  B2 -->|Calls| B3
-  B3 -->|ORM / JDBC| D1
-
-  B1 ---|uses| E1
-  B3 ---|maps to| E2
-
-  %% Styling
-  classDef frontend fill:#dae8fc,stroke:#6c8ebf,color:#1a237e
-  classDef backend fill:#d5e8d4,stroke:#82b366,color:#1b4332
-  classDef storage fill:#e8def8,stroke:#8e44ad,color:#4a148c
-  classDef model fill:#fff2cc,stroke:#d6b656,color:#7f4f24
-
-  class F1,F2 frontend
-  class B1,B2,B3 backend
-  class D1 storage
-  class E1,E2 model
-
-```
 
 ## Layered Architecture of Billing and Payments Module
 

@@ -37,81 +37,9 @@ The **Vehicle Log Entry & Exit Module** is a core component of the Vehicle Parki
 | **slotId** | BIGINT        | Not Null, Foreign Key (Parking Slot) | Identifier of the parking slot used             |
 
 ## Component Diagram
-```mermaid
-flowchart LR
- 
-  %% Groups
 
-  subgraph Frontend [React Frontend]
+![Vehiclelog_component](../assets/images/Vehiclelog_component.png)
 
-    direction TB
-
-    A1[Entry/Exit UI Components]
-
-    A2[VehicleLog API Client]
-
-  end
- 
-  subgraph Backend [Spring Boot Backend]
-
-    direction TB
-
-    B1[VehicleLogController]
-
-    B2[VehicleLogService]
-
-    B3[VehicleLogRepository]
-
-  end
- 
-  subgraph Database [Relational Database]
-
-    direction TB
-
-    C1[(VehicleLog Table)]
-
-  end
- 
-  %% Entity and DTO
-
-  D1[VehicleLog DTO]
-
-  D2[VehicleLog Entity]
- 
-  %% Connections
-
-  A2 -->|HTTP/REST| B1
-
-  B1 -->|Calls| B2
-
-  B2 -->|Calls| B3
-
-  B3 -->|ORM / JDBC| C1
- 
-  B1 ---|uses| D1
-
-  B3 ---|maps to| D2
- 
-  %% Styling
-
-  classDef frontend fill:#dae8fc,stroke:#6c8ebf,color:#1a237e
-
-  classDef backend fill:#d5e8d4,stroke:#82b366,color:#1b4332
-
-  classDef storage fill:#e8def8,stroke:#8e44ad,color:#4a148c
-
-  classDef model fill:#fff2cc,stroke:#d6b656,color:#7f4f24
- 
-  class A1,A2 frontend
-
-  class B1,B2,B3 backend
-
-  class C1 storage
-
-  class D1,D2 model
-
- 
-```
 
 ## Layered Architecture of Vehicle Log Module
 

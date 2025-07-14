@@ -35,8 +35,7 @@ The **User Management Module** is responsible for managing user-related operatio
 
 ## Component Diagram
 
-![Component Diagram](assets/images/UserComponent.png)
-
+![User_Component](../assets/images/User_component.png)
  
 ## Layered Architecture of User Management Module
 

@@ -40,53 +40,8 @@ The **Reservation Service Module** is a critical component of the Vehicle Parkin
 | **type** | VARCHAR(10)   | Nullable (e.g., "2W", "4W")        | Type of slot reserved (e.g., "2W", "4W")        |
 
 ## Component Diagram
-```mermaid
-flowchart LR
 
-  %% Groups
-  subgraph Frontend [React Frontend]
-    direction TB
-    F1[Reservation UI Components]
-    F2[Reservation API Client]
-  end
-
-  subgraph Backend [Spring Boot Backend]
-    direction TB
-    B1[ReservationController]
-    B2[ReservationService]
-    B3[ReservationRepository]
-  end
-
-  subgraph Database [Relational Database]
-    direction TB
-    D1[(Reservations Table)]
-  end
-
-  %% DTO and Entity
-  E1[Reservation DTO]
-  E2[Reservation Entity]
-
-  %% Connections
-  F2 -->|HTTP/REST| B1
-  B1 -->|Calls| B2
-  B2 -->|Calls| B3
-  B3 -->|ORM / JDBC| D1
-
-  B1 ---|uses| E1
-  B3 ---|maps to| E2
-
-  %% Styling
-  classDef frontend fill:#dae8fc,stroke:#6c8ebf,color:#1a237e
-  classDef backend fill:#d5e8d4,stroke:#82b366,color:#1b4332
-  classDef storage fill:#e8def8,stroke:#8e44ad,color:#4a148c
-  classDef model fill:#fff2cc,stroke:#d6b656,color:#7f4f24
-
-  class F1,F2 frontend
-  class B1,B2,B3 backend
-  class D1 storage
-  class E1,E2 model
-
-```
+![Reservation_component](../assets/images/Reservation_component.png)
 
 ## Layered Architecture of Reservation Module 
 
